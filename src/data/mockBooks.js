@@ -17,7 +17,8 @@ export const mockBooks = [
             "A través de una mezcla de realidad y elementos fantásticos, la novela explora el paso del tiempo, " +
             "la soledad y los ciclos repetitivos de la vida, construyendo un universo único en la literatura.",
         cover: "/cien-anios-soledad.jpg",
-        publishedYear: 1967
+        publishedYear: 1967,
+        image: "https://covers.openlibrary.org/b/isbn/9780307474728-L.jpg"
     },
     {
         id: 2,
@@ -37,7 +38,8 @@ export const mockBooks = [
             "Winston Smith comienza a cuestionar la realidad impuesta por el Partido. Su lucha interna y su " +
             "deseo de libertad lo llevan a enfrentarse a un sistema que todo lo ve y todo lo manipula.",
         cover: "/1984.jpg",
-        publishedYear: 1949
+        publishedYear: 1949,
+        image: "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg"
     },
     {
         id: 3,
@@ -57,7 +59,8 @@ export const mockBooks = [
             "A través de sus relatos, se revelan reflexiones profundas sobre la amistad, el amor, la inocencia " +
             "y la forma en que los adultos pierden lo esencial de la vida.",
         cover: "/el-principito.jpg",
-        publishedYear: 1943
+        publishedYear: 1943,
+        image: "https://covers.openlibrary.org/b/isbn/9780156012195-L.jpg"
     },
     {
         id: 4,
@@ -77,7 +80,8 @@ export const mockBooks = [
             "las primeras impresiones y los malentendidos en torno al enigmático señor Darcy. Es una " +
             "crítica elegante a las normas sociales de su época y una exploración del amor y el carácter.",
         cover: "/orgullo-prejuicio.jpg",
-        publishedYear: 1813
+        publishedYear: 1813,
+        image: "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg"
     },
     {
         id: 5,
@@ -97,7 +101,8 @@ export const mockBooks = [
             "cambios diarios. Explica cómo los hábitos se forman, cómo pueden modificarse y cómo acciones " +
             "aparentemente insignificantes pueden generar resultados extraordinarios a largo plazo.",
         cover: "/habitos-atomicos.jpg",
-        publishedYear: 2018
+        publishedYear: 2018,
+        image: "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg"
     },
     {
         id: 6,
@@ -117,7 +122,8 @@ export const mockBooks = [
             "eficiente y fácil de mantener. A través de ejemplos y principios prácticos, el autor muestra " +
             "cómo mejorar la calidad del software y la disciplina profesional en programación.",
         cover: "/clean-code.jpg",
-        publishedYear: 2008
+        publishedYear: 2008,
+        image: "https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg"
     },
     {
         id: 7,
@@ -137,7 +143,8 @@ export const mockBooks = [
             "El libro aborda desde la escritura de código hasta la toma de decisiones y el crecimiento profesional " +
             "en el mundo del desarrollo de software.",
         cover: "/pragmatic-programmer.jpg",
-        publishedYear: 1999
+        publishedYear: 1999,
+        image: "https://covers.openlibrary.org/b/isbn/9780201616224-L.jpg"
     },
     {
         id: 8,
@@ -157,7 +164,8 @@ export const mockBooks = [
             "como parte de una troupe de artistas hasta su ingreso en una prestigiosa universidad de magia. " +
             "Es una narración sobre aprendizaje, pérdida y ambición.",
         cover: "/nombre-del-viento.jpg",
-        publishedYear: 2007
+        publishedYear: 2007,
+        image: "https://covers.openlibrary.org/b/isbn/9788401352836-L.jpg"
     },
     {
         id: 9,
@@ -177,7 +185,8 @@ export const mockBooks = [
             "marcan el destino de los Siete Reinos. La historia presenta múltiples personajes y tramas que se " +
             "entrelazan en una lucha constante por el trono.",
         cover: "/juego-de-tronos.jpg",
-        publishedYear: 1996
+        publishedYear: 1996,
+        image: "https://covers.openlibrary.org/b/isbn/9780553593716-L.jpg"
     },
     {
         id: 10,
@@ -197,6 +206,7 @@ export const mockBooks = [
             "enfrenta desafíos y descubre secretos sobre su pasado. Es el inicio de una historia llena de magia, " +
             "crecimiento personal y lucha entre el bien y el mal.",
         cover: "/harry-potter-1.jpg",
-        publishedYear: 1997
+        publishedYear: 1997,
+        image: "https://covers.openlibrary.org/b/isbn/9788478884452-L.jpg"
     }
 ];
