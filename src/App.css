@@ -4,92 +4,206 @@
   box-sizing: border-box;
 }
 
-/* VARIABLES */
 :root {
-  --bg: #f1f5f9;
+  --bg: #f8f4ee;
+  --bg-soft: #fffaf3;
   --surface: #ffffff;
-  --primary: #2563eb;
-  --text: #0f172a;
-  --muted: #64748b;
-  --border: #e2e8f0;
+  --surface-soft: #fff7ed;
+
+  --primary: #8b4513;
+  --primary-dark: #5f2f0d;
+  --primary-light: #d97706;
+
+  --secondary: #1e3a5f;
+  --accent: #f59e0b;
+
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #eadfD0;
+
+  --success: #16a34a;
+  --danger: #dc2626;
+
+  --shadow-sm: 0 4px 12px rgba(95, 47, 13, 0.08);
+  --shadow-md: 0 12px 30px rgba(95, 47, 13, 0.14);
+  --shadow-lg: 0 20px 50px rgba(95, 47, 13, 0.18);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* CONTENEDOR GENERAL */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+          radial-gradient(circle at top left, rgba(245, 158, 11, 0.18), transparent 32%),
+          radial-gradient(circle at top right, rgba(139, 69, 19, 0.13), transparent 30%),
+          var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+#root,
+#app {
+  min-height: 100vh;
+}
+
 #app {
   display: flex;
   flex-direction: column;
+}
+
+.app-Layout {
   min-height: 100vh;
-  background-color: var(--bg);
-  font-family: system-ui, sans-serif;
-}
-
-/* ===== HEADER ===== */
-.header {
-  background-color: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 16px 32px;
-
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
 
-.header h1 {
-  font-size: 20px;
-}
-
-.nav {
-  display: flex;
-  gap: 20px;
-}
-
-.nav a {
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.nav a:hover {
-  color: white;
-}
-
-/* ===== MAIN ===== */
-.main {
+.main,
+main {
   flex: 1;
-  padding: 40px 32px;
-  max-width: 1200px;
-  width: 100%;
+}
+
+.container {
+  width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
 }
 
-/* CONTENIDO PRINCIPAL (CLARO) */
-.container {
-  background-color: #ffffff;
-  padding: 32px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+.page-section {
+  padding: 48px 16px;
 }
 
-/* ===== FOOTER ===== */
-.footer {
-  background-color: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 16px 32px;
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: var(--primary-dark);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+.primary-btn,
+.secondary-btn,
+.book-detail-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight: 700;
+  transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          background-color 0.2s ease,
+          color 0.2s ease;
+}
+
+.primary-btn,
+.book-detail-btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(139, 69, 19, 0.24);
+}
+
+.primary-btn:hover,
+.book-detail-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(139, 69, 19, 0.3);
+}
+
+.secondary-btn {
+  background: #ffffff;
+  color: var(--primary-dark);
+  border: 1px solid var(--border);
+}
+
+.secondary-btn:hover {
+  background: var(--surface-soft);
+  transform: translateY(-2px);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(234, 223, 208, 0.9);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(12px);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 13px 18px;
+  background: #ffffff;
+  color: var(--text);
+  outline: none;
+  transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease,
+          transform 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.18);
+}
+
+.empty-state {
+  padding: 40px 24px;
   text-align: center;
-  font-size: 14px;
+  background: #ffffff;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
   color: var(--muted);
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    gap: 10px;
+  .page-section {
+    padding: 32px 14px;
   }
 
-  .main {
-    padding: 20px;
+  .primary-btn,
+  .secondary-btn,
+  .book-detail-btn {
+    width: 100%;
   }
 }
