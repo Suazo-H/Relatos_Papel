@@ -1,10 +1,13 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { mockBooks } from "../../data/mockBooks";
 import "./LibroDetalle.css";
+import { useContext } from "react";
+import { GlobalContext } from "../../context/global/GlobalContext";
 
 export default function LibroDetalle() {
     const { bookId } = useParams();
     const navigate = useNavigate();
+    const { addToCart, toggleCart } = useContext(GlobalContext);
 
     const libro = mockBooks.find(
         (item) => item.id === Number(bookId)
@@ -123,7 +126,7 @@ export default function LibroDetalle() {
                             <button
                                 className="book-detail-btn"
                                 disabled={libro.stock === 0}
-                                onClick={() => alert("Libro agregado al carrito")}
+                                onClick={() => addToCart(libro)}
                             >
                                 Añadir al carrito
                             </button>
