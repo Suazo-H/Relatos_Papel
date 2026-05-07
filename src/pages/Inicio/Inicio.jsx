@@ -15,7 +15,6 @@ export default function Inicio() {
   return (
     <div className="page-section">
       <div className="container">
-
         <h1 className="section-title">Catálogo de Libros</h1>
         <p className="section-subtitle">
           Explora nuestra colección y encuentra tu próxima lectura.
@@ -24,7 +23,6 @@ export default function Inicio() {
         <BarraBusqueda value={search} onChange={setSearch} />
 
         <ListaLibros books={filteredBooks} />
-
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import './MainContent.css';
+import "./MainContent.css";
 
-export default function MainContent(){
-    return(
-        <div className="container">
-            <Outlet />
-        </div>
-    );
+export default function MainContent() {
+  return (
+    <div className="container">
+      <Outlet />
+    </div>
+  );
 }

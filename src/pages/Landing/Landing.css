@@ -1,76 +1,76 @@
 .landing-container,
 .landing {
-    width: min(1180px, calc(100% - 32px));
-    margin: 0 auto;
-    padding: 64px 0;
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 64px 0;
 }
 
 .landing-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .landing-content h1 {
-    font-size: clamp(2.5rem, 5vw, 5rem);
-    line-height: 0.98;
-    letter-spacing: -0.05em;
-    color: var(--primary-dark);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  color: var(--primary-dark);
 }
 
 .landing-content p {
-    max-width: 620px;
-    color: var(--muted);
-    font-size: 1.2rem;
-    line-height: 1.7;
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 1.2rem;
+  line-height: 1.7;
 }
 
 .landing-image {
-    position: relative;
-    display: flex;
-    justify-content: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .landing-image::before {
-    content: "";
-    position: absolute;
-    width: min(420px, 85%);
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background:
-            radial-gradient(circle, rgba(245, 158, 11, 0.35), transparent 62%),
-            rgba(139, 69, 19, 0.08);
-    filter: blur(4px);
+  content: "";
+  position: absolute;
+  width: min(420px, 85%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(245, 158, 11, 0.35), transparent 62%),
+    rgba(139, 69, 19, 0.08);
+  filter: blur(4px);
 }
 
 .landing-image img {
-    position: relative;
-    width: min(420px, 100%);
-    max-width: 100%;
-    border-radius: 28px;
-    box-shadow: var(--shadow-lg);
-    transform: rotate(2deg);
-    transition:
-            transform 0.25s ease,
-            box-shadow 0.25s ease;
+  position: relative;
+  width: min(420px, 100%);
+  max-width: 100%;
+  border-radius: 28px;
+  box-shadow: var(--shadow-lg);
+  transform: rotate(2deg);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .landing-image img:hover {
-    transform: rotate(0deg) translateY(-6px);
-    box-shadow: 0 26px 60px rgba(95, 47, 13, 0.28);
+  transform: rotate(0deg) translateY(-6px);
+  box-shadow: 0 26px 60px rgba(95, 47, 13, 0.28);
 }
 
 @media (max-width: 860px) {
-    .landing-container,
-    .landing {
-        padding: 42px 0;
-    }
+  .landing-container,
+  .landing {
+    padding: 42px 0;
+  }
 
-    .landing-content {
-        align-items: center;
-    }
+  .landing-content {
+    align-items: center;
+  }
 
-    button {
-        flex: 1;
-    }
+  button {
+    flex: 1;
+  }
 }
