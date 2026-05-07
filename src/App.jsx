@@ -12,6 +12,8 @@ import Menu from "./components/Menu/Menu.jsx";
 import MainContent from "./components/MainContent/MainContent.jsx";
 import {AuthProvider} from "./context/auth/authProvider.jsx";
 import {PrivateRoute} from "./components/PrivateRoute/PrivateRoute.jsx";
+import Cart from "./components/Carrito/Cart.jsx";
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -19,7 +21,22 @@ function App() {
         <AuthProvider>
             <BrowserRouter>
               <div id="app" className="app-Layout">
+                <Toaster 
+                  position="bottom-right"
+                  toastOptions={{
+                    style: {
+                      background: '#ffffff',
+                      color: 'var(--primary-dark)',
+                      border: '1px solid rgba(234, 223, 208, 0.8)',
+                      borderRadius: '16px',
+                      fontWeight: '700',
+                      boxShadow: '0 12px 32px rgba(95, 47, 13, 0.18)',
+                    },
+                    duration: 3000,
+                  }}
+                />
                 <Menu />
+                <Cart />
                 <Routes>
                   <Route path="/" element={<MainContent />} >
                     <Route index element={<Landing />} />

@@ -1,9 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import "./TargetaLibro.css";
+import { useContext } from "react";
+import { GlobalContext } from "../../context/global/GlobalContext";
 
 export default function TargetaLibro({ book }) {
 
     const navigate = useNavigate();
+    const { addToCart, toggleCart } = useContext(GlobalContext);
+
+    const handleAddToCart = (e) => {
+        e.stopPropagation();
+        addToCart(book);
+    };
 
     return (
         <div
@@ -48,6 +56,14 @@ export default function TargetaLibro({ book }) {
                 <span className="book-price">
                     ${book.price}
                 </span>
+
+                <button 
+                    className="add-to-cart-btn"
+                    disabled={book.stock === 0}
+                    onClick={handleAddToCart}
+                >
+                    {book.stock > 0 ? "Añadir" : "Agotado"}
+                </button>
 
             </div>
         </div>
