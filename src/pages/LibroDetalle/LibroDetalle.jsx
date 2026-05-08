@@ -7,7 +7,7 @@ import { GlobalContext } from "../../context/global/GlobalContext";
 export default function LibroDetalle() {
     const { bookId } = useParams();
     const navigate = useNavigate();
-    const { addToCart, toggleCart } = useContext(GlobalContext);
+    const { addToCart } = useContext(GlobalContext);
 
     const libro = mockBooks.find(
         (item) => item.id === Number(bookId)

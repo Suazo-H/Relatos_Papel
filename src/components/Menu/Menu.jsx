@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import "./Menu.css"
 import { NavLink } from "react-router-dom";
 import { GlobalContext } from "../../context/global/GlobalContext";
