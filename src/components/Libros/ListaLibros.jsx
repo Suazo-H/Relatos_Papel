@@ -1,4 +1,4 @@
-import TargetaLibro from "./TargetaLibro";
+import TarjetaLibro from "./TarjetaLibro";
 import "./ListaLibros.css";
 
 export default function ListaLibros({ books }) {
@@ -9,7 +9,7 @@ export default function ListaLibros({ books }) {
   return (
     <div className="lista-libros">
       {books.map((book) => (
-        <TargetaLibro key={book.id} book={book} />
+        <TarjetaLibro key={book.id} book={book} />
       ))}
     </div>
   );
