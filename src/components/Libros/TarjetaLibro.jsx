@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "./TargetaLibro.css";
+import "./TarjetaLibro.css";
 
-export default function TargetaLibro({ book }) {
+export default function TarjetaLibro({ book }) {
 
   const navigate = useNavigate();
 
