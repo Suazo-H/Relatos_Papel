@@ -173,7 +173,7 @@ export const mockBooks = [
       "Es una narración sobre aprendizaje, pérdida y ambición.",
     cover: "/nombre-del-viento.jpg",
     publishedYear: 2007,
-    image: "https://covers.openlibrary.org/b/id/15154551-L.jpg",
+    image: "https://covers.openlibrary.org/b/isbn/9788401352836-L.jpg",
   },
   {
     id: 9,

@@ -1,0 +1,12 @@
+# Artifacts
+dist
+dist-ssr
+node_modules
+coverage
+
+# Build system
+.agents
+skills-lock.json
+
+# Public assets
+public/
