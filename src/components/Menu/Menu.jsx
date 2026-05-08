@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import "./Menu.css"
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { GlobalContext } from "../../context/global/GlobalContext";
 
 export default function Menu() {
@@ -15,8 +15,8 @@ export default function Menu() {
                 </div>
                 <ul>
                     {/*Navegar a la página de inicio y login*/}
-                    <li><Link to="/inicio">Inicio</Link></li>
-                    <li><Link to="/login">Login</Link></li>
+                    <li><NavLink to="/inicio">Inicio</NavLink></li>
+                    <li><NavLink to="/login">Login</NavLink></li>
                 </ul>
                 <div className="menu-cart">
                     <button type="button" className="cart-button" onClick={toggleCart}>
