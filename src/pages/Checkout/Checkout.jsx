@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import "./Checkout.css";
 import { GlobalContext } from "../../context/global/GlobalContext";
@@ -58,10 +59,13 @@ export default function Checkout() {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      toast.error("Por favor, completa todos los campos requeridos.");
       return;
     }
 
-    window.alert("¡Pedido realizado correctamente!");
+    toast.success("¡Pedido realizado correctamente!", {
+      icon: '🎉',
+    });
 
     clearCart();
 
