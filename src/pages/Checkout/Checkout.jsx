@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Checkout.css";
 import { GlobalContext } from "../../context/global/GlobalContext";
@@ -20,14 +20,46 @@ export default function Checkout() {
         cvv: "",
     });
 
+    const [errors, setErrors] = useState({});
+
     const handleChange = (e) => {
+        const { name, value } = e.target;
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value,
+            [name]: value,
         });
+        // Limpiar error del campo al escribir
+        if (errors[name]) {
+            setErrors({
+                ...errors,
+                [name]: "",
+            });
+        }
+    };
+
+    const validateEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     };
 
     const handleCheckout = () => {
+        const newErrors = {};
+
+        // Validar campos requeridos
+        Object.keys(formData).forEach((key) => {
+            if (!formData[key].trim()) {
+                newErrors[key] = "Este campo es requerido";
+            }
+        });
+
+        // Validar formato de email
+        if (formData.email && !validateEmail(formData.email)) {
+            newErrors.email = "Formato de correo electrónico inválido";
+        }
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
 
         window.alert("¡Pedido realizado correctamente!");
 
@@ -47,46 +79,71 @@ export default function Checkout() {
                 <section>
                     <h3>Información de contacto</h3>
 
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Correo electrónico"
-                        onChange={handleChange}
-                    />
+                    <div className="input-group">
+                        <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            placeholder="Correo electrónico"
+                            onChange={handleChange}
+                            className={errors.email ? "input-error" : ""}
+                        />
+                        {errors.email && <span className="error-text">{errors.email}</span>}
+                    </div>
                 </section>
 
                 <section>
                     <h3>Dirección de envío</h3>
 
-                    <input
-                        type="text"
-                        name="fullName"
-                        placeholder="Nombre completo"
-                        onChange={handleChange}
-                    />
+                    <div className="input-group">
+                        <input
+                            type="text"
+                            name="fullName"
+                            value={formData.fullName}
+                            placeholder="Nombre completo"
+                            onChange={handleChange}
+                            className={errors.fullName ? "input-error" : ""}
+                        />
+                        {errors.fullName && <span className="error-text">{errors.fullName}</span>}
+                    </div>
 
-                    <input
-                        type="text"
-                        name="address"
-                        placeholder="Dirección"
-                        onChange={handleChange}
-                    />
+                    <div className="input-group">
+                        <input
+                            type="text"
+                            name="address"
+                            value={formData.address}
+                            placeholder="Dirección"
+                            onChange={handleChange}
+                            className={errors.address ? "input-error" : ""}
+                        />
+                        {errors.address && <span className="error-text">{errors.address}</span>}
+                    </div>
 
                     <div className="checkout-row">
 
-                        <input
-                            type="text"
-                            name="city"
-                            placeholder="Ciudad"
-                            onChange={handleChange}
-                        />
+                        <div className="input-group">
+                            <input
+                                type="text"
+                                name="city"
+                                value={formData.city}
+                                placeholder="Ciudad"
+                                onChange={handleChange}
+                                className={errors.city ? "input-error" : ""}
+                            />
+                            {errors.city && <span className="error-text">{errors.city}</span>}
+                        </div>
 
-                        <input
-                            type="text"
-                            name="country"
-                            placeholder="País"
-                            onChange={handleChange}
-                        />
+                        <div className="input-group">
+                            <input
+                                type="text"
+                                name="country"
+                                value={formData.country}
+                                placeholder="País"
+                                onChange={handleChange}
+                                className={errors.country ? "input-error" : ""}
+                            />
+                            {errors.country && <span className="error-text">{errors.country}</span>}
+                        </div>
 
                     </div>
                 </section>
@@ -94,28 +151,43 @@ export default function Checkout() {
                 <section>
                     <h3>Información de pago</h3>
 
-                    <input
-                        type="text"
-                        name="cardNumber"
-                        placeholder="Número de tarjeta"
-                        onChange={handleChange}
-                    />
+                    <div className="input-group">
+                        <input
+                            type="text"
+                            name="cardNumber"
+                            value={formData.cardNumber}
+                            placeholder="Número de tarjeta"
+                            onChange={handleChange}
+                            className={errors.cardNumber ? "input-error" : ""}
+                        />
+                        {errors.cardNumber && <span className="error-text">{errors.cardNumber}</span>}
+                    </div>
 
                     <div className="checkout-row">
 
-                        <input
-                            type="text"
-                            name="expiry"
-                            placeholder="MM/YY"
-                            onChange={handleChange}
-                        />
+                        <div className="input-group">
+                            <input
+                                type="text"
+                                name="expiry"
+                                value={formData.expiry}
+                                placeholder="MM/YY"
+                                onChange={handleChange}
+                                className={errors.expiry ? "input-error" : ""}
+                            />
+                            {errors.expiry && <span className="error-text">{errors.expiry}</span>}
+                        </div>
 
-                        <input
-                            type="text"
-                            name="cvv"
-                            placeholder="CVV"
-                            onChange={handleChange}
-                        />
+                        <div className="input-group">
+                            <input
+                                type="text"
+                                name="cvv"
+                                value={formData.cvv}
+                                placeholder="CVV"
+                                onChange={handleChange}
+                                className={errors.cvv ? "input-error" : ""}
+                            />
+                            {errors.cvv && <span className="error-text">{errors.cvv}</span>}
+                        </div>
 
                     </div>
                 </section>
@@ -144,7 +216,7 @@ export default function Checkout() {
                                 </div>
 
                                 <span>
-                                    ${item.price}
+                                    ${item.price.toFixed(2)}
                                 </span>
 
                             </div>
@@ -157,7 +229,7 @@ export default function Checkout() {
 
                 <div className="summary-total">
                     <h3>Total</h3>
-                    <h3>${cartTotal}</h3>
+                    <h3>${cartTotal.toFixed(2)}</h3>
                 </div>
 
                 <button
